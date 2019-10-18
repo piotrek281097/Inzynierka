@@ -6,12 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/goToMails"
+            android:text="Check emails"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"/>
+
+        <ImageView
+            android:id="@+id/photo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="32dp"
+            app:srcCompat="@drawable/logo"/>
 
         <TextView
             android:layout_width="wrap_content"

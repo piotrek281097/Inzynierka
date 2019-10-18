@@ -30,6 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
     TextView emailTV;
     TextView idTV;
     ImageView photoIV;
+    Button goToMails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +41,14 @@ public class MainActivity2 extends AppCompatActivity {
         nameTV = findViewById(R.id.name);
         emailTV = findViewById(R.id.email);
         idTV = findViewById(R.id.id);
+        photoIV = findViewById(R.id.photo);
+        goToMails = findViewById(R.id.goToMails);
+
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -71,6 +76,18 @@ public class MainActivity2 extends AppCompatActivity {
                 signOut();
             }
         });
+
+
+        goToMails.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent intent = new Intent(MainActivity2.this, CheckingEmailsActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void signOut() {
@@ -84,4 +101,6 @@ public class MainActivity2 extends AppCompatActivity {
                     }
                 });
     }
+
+
 }
