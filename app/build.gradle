@@ -4,6 +4,10 @@ apply plugin: 'com.google.gms.google-services'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     defaultConfig {
         applicationId "com.example.paymentreminderapp"
         minSdkVersion 21
@@ -37,5 +41,8 @@ dependencies {
     implementation files('D:\\StudiaSemestr7\\paymentApp\\libs\\activation.jar')
     implementation files('D:\\StudiaSemestr7\\paymentApp\\libs\\mail.jar')
     implementation files('D:\\StudiaSemestr7\\paymentApp\\libs\\additionnal.jar')
+    implementation files('D:\\StudiaSemestr7\\paymentApp\\libs\\commons-lang3-3.9\\commons-lang3-3.9.jar')
+    implementation 'com.tom_roush:pdfbox-android:1.8.10.1'
+    implementation 'com.itextpdf:itextg:5.5.10'
 
 }
