@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">PaymentReminderApp</string>
+    <string name="textForNewUsers">Jesteś nowym użytkownikiem? Klinknij tutaj</string>
+    <string name="instruction_title_first">Krok pierwszy</string>
+    <string name="next">Dalej</string>
+
 </resources>
