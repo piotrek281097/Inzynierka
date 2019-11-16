@@ -30,8 +30,9 @@
         </activity>
         <activity android:name=".CheckingEmailsActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".ForNewUsersSecondActivity"/>
+        <activity android:name=".ForNewUsersThirdActivity"/>
         <activity android:name=".ForNewUsersActivity"/>
-        <activity android:name=".ForNewUsersNextActivity"/>
     </application>
 
 </manifest>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/instructionTitleSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="24dp"
+        android:text="@string/instruction_title_second"/>
+
+    <TextView
+        android:id="@+id/instructionSecondStep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/instructionTitleSecond"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:inputType="textPassword"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/instructionSecondStep"
+        android:hint="@string/give_password"/>
+
+    <TextView
+        android:id="@+id/textLinkNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textAlignment="textEnd"
+        android:textSize="24dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/finish"/>
+
+</RelativeLayout>

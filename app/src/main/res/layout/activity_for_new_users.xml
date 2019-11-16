@@ -4,44 +4,53 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/instructionTitleFirst"
+        android:id="@+id/titleAttention"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="20dp"
-        android:textSize="24dp"
-        android:text="@string/instruction_title_first"/>
+        android:textSize="28dp"
+        android:text="@string/attention"/>
 
     <TextView
-        android:id="@+id/instructionFirstStep"
+        android:id="@+id/informationAssurance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_below="@+id/instructionTitleFirst"
-        android:textSize="16dp"
-        android:layout_marginTop="20dp" />
+        android:layout_below="@+id/titleAttention"
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"/>
 
-    <TextView
-        android:id="@+id/linkToSettingGmail"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_below="@+id/instructionFirstStep"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
-        android:textSize="16dp"
-        android:linksClickable="true"
-        android:layout_marginTop="20dp" />
-
-    <TextView
-        android:id="@+id/textLinkNext"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textAlignment="textEnd"
-        android:textSize="24dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
         android:layout_alignParentBottom="true"
-        android:text="@string/next"/>
+        >
 
+        <TextView
+            android:id="@+id/textLinkOut"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAlignment="textStart"
+            android:textSize="28dp"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:text="@string/out"/>
+
+        <TextView
+            android:id="@+id/textLinkNextToSecond"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textAlignment="textEnd"
+            android:textSize="28dp"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:text="@string/next"/>
+
+    </LinearLayout>
 </RelativeLayout>
