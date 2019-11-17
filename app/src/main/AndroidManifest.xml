@@ -33,6 +33,8 @@
         <activity android:name=".ForNewUsersSecondActivity"/>
         <activity android:name=".ForNewUsersThirdActivity"/>
         <activity android:name=".ForNewUsersActivity"/>
+        <activity android:name=".MainMenuActivity"/>
+
     </application>
 
 </manifest>

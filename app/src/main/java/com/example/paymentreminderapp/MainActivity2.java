@@ -72,14 +72,17 @@ public class MainActivity2 extends AppCompatActivity {
             String personId = acct.getId();
             Uri personPhoto = acct.getPhotoUrl();
 
+            String username = personEmail.replace("@gmail.com", "");
 
             //creating User
             User user = new User(acct.getId(),
                     acct.getIdToken(),
                     acct.getDisplayName(),
-                    acct.getEmail());
+                    acct.getEmail(),
+                    username,
+                    new String());
 
-            db.collection("Users").document("User1").set(user)
+            db.collection("Users").document("User2").set(user)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {

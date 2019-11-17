@@ -2,12 +2,23 @@ package com.example.paymentreminderapp.model;
 
 public class User {
 
-    String id;
-    String idToken;
-    String displayName;
-    String email;
+    private String id;
+    private String idToken;
+    private String displayName;
+    private String email;
+    private String username;
+    private String password;
 
     public User() {}
+
+    public User(String id, String idToken, String displayName, String email, String username, String password) {
+        this.id = id;
+        this.idToken = idToken;
+        this.displayName = displayName;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
 
     public String getId() {
         return id;
@@ -25,10 +36,11 @@ public class User {
         return email;
     }
 
-    public User(String id, String idToken, String displayName, String email) {
-        this.id = id;
-        this.idToken = idToken;
-        this.displayName = displayName;
-        this.email = email;
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }

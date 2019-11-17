@@ -20,7 +20,8 @@ public class ForNewUsersSecondActivity extends AppCompatActivity {
     String instructionText = "W celu korzystania z naszej aplikacji prawdopodbnie będzie konieczna zmiana pewnych ustawień bezpieczeństwa " +
             "na Twoim koncie gmail. Jeśli twoje konto zabrania dostępu mniej bezpiecznym aplkacjom to postępuj zgodnie z instrukcją." +
             " Kliknij w poniższy link, a następnie poszukaj pozycji 'Dostęp mniej bezpiecznych aplikacji' " +
-            "i udziel takim aplikacjom uprawnień. Później wróć do aplikacji i kliknij w prawym dolnym rogu przycisk DALEJ";
+            "i udziel takim aplikacjom uprawnień. Jeśli nie widzisz takiej opcji to wejdź w zakładkę 'Bezpieczeństwo' i tam szukaj." +
+            " Później wróć do aplikacji i kliknij w prawym dolnym rogu przycisk DALEJ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
