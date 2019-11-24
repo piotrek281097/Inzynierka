@@ -1,11 +1,54 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:navigationBarColor">@color/primary</item>
     </style>
+
+    <style name="ButtonCabal" parent="TextAppearance.MaterialComponents.Button">
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:backgroundTint">@color/accent</item>
+    </style>
+
+    <!--    <style name="ButtonCabal" parent="TextAppearance.MaterialComponents.Button"></style>-->
+
+    <style name="item" parent="Theme.AppCompat">
+        <item name="android:background">@color/primary_light</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:backgroundTintMode">add</item>
+    </style>
+
+    <style name="FAB" parent="Widget.Design.FloatingActionButton">
+        <item name="backgroundTint">@color/primary</item>
+    </style>
+
+    <style name="icon" parent="Theme.AppCompat">
+        <item name="android:tint">@color/accent</item>
+    </style>
+
+    <style name="filters" parent="Theme.AppCompat">
+        <item name="android:background">#FFF</item>
+        <item name="android:backgroundTintMode">add</item>
+    </style>
+
+    <style name="WelcomeScreen" parent="Theme.AppCompat">
+        <item name="android:background">@color/primary</item>
+    </style>
+
+    <style name="MenuScreen" parent="Theme.AppCompat">
+        <item name="android:background">@color/primary</item>
+    </style>
+
+    <style name="Card" parent="Theme.AppCompat">
+        <item name="android:backgroundTint">#FFF</item>
+    </style>
+
 
 </resources>

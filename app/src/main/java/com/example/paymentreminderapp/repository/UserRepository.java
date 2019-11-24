@@ -7,7 +7,6 @@ import androidx.annotation.NonNull;
 import com.example.paymentreminderapp.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -57,10 +56,6 @@ public class UserRepository {
 
     public void updatePassword(String username, String password) {
         db.collection(COLLECTION_NAME).document(username).update("password", password);
-    }
-
-    public DocumentSnapshot getUserByUsername(String username){
-        return db.collection(COLLECTION_NAME).document(username).get().getResult();
     }
 
     public String getPasswordUser(String username) {

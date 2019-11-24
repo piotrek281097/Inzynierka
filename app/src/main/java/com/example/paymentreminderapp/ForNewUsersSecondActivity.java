@@ -1,6 +1,7 @@
 package com.example.paymentreminderapp;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.util.Linkify;
 import android.view.View;
@@ -21,7 +22,7 @@ public class ForNewUsersSecondActivity extends AppCompatActivity {
             "na Twoim koncie gmail. Jeśli twoje konto zabrania dostępu mniej bezpiecznym aplkacjom to postępuj zgodnie z instrukcją." +
             " Kliknij w poniższy link, a następnie poszukaj pozycji 'Dostęp mniej bezpiecznych aplikacji' " +
             "i udziel takim aplikacjom uprawnień. Jeśli nie widzisz takiej opcji to wejdź w zakładkę 'Bezpieczeństwo' i tam szukaj." +
-            " Później wróć do aplikacji i kliknij w prawym dolnym rogu przycisk DALEJ";
+            " Później wróć do aplikacji i kliknij DALEJ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
