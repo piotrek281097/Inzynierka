@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import androidx.work.NetworkType;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
+import com.example.paymentreminderapp.invoices.InvoicesActivity;
 import com.example.paymentreminderapp.model.Invoice;
 import com.example.paymentreminderapp.model.User;
 import com.example.paymentreminderapp.repository.InvoiceRepository;
@@ -44,11 +46,11 @@ import butterknife.ButterKnife;
 public class MainMenuActivity extends AppCompatActivity {
 
     @BindView(R.id.nameText) TextView name;
-    @BindView(R.id.btnInvoices) TextView btnInvoices;
-    @BindView(R.id.btnStatistics) TextView btnStatistics;
-    @BindView(R.id.btnPayments) TextView btnPayments;
-    @BindView(R.id.btnSettings) TextView btnSettings;
-    @BindView(R.id.btnSignOut) TextView btnSignOut;
+    @BindView(R.id.btnInvoices) Button btnInvoices;
+    @BindView(R.id.btnStatistics) Button btnStatistics;
+    @BindView(R.id.btnPayments) Button btnPayments;
+    @BindView(R.id.btnSettings) Button btnSettings;
+    @BindView(R.id.btnSignOut) Button btnSignOut;
 
     GoogleSignInClient mGoogleSignInClient;
     UserRepository userRepository = new UserRepository();
@@ -71,6 +73,11 @@ public class MainMenuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 signOut();
             }
+        });
+
+        btnInvoices.setOnClickListener(v -> {
+            Intent intent = new Intent(getBaseContext(), InvoicesActivity.class);
+            startActivity(intent);
         });
     }
 

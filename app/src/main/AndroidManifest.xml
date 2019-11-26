@@ -34,6 +34,7 @@
         <activity android:name=".ForNewUsersThirdActivity"/>
         <activity android:name=".ForNewUsersActivity"/>
         <activity android:name=".MainMenuActivity"/>
+        <activity android:name=".invoices.InvoicesActivity"/>
 
     </application>
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_all_invoices"
+        android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+        android:title="@string/all" />
+
+    <item
+        android:id="@+id/nav_paid_invoices"
+        android:icon="@drawable/ic_done_black_24dp"
+        android:title="@string/paid" />
+    <item
+        android:id="@+id/nav_unpaid_invoices"
+        android:icon="@drawable/ic_close_black_24dp"
+        android:title="@string/unpaid" />
+</menu>
