@@ -14,11 +14,16 @@ import butterknife.ButterKnife;
 
 public class InvoicesActivity extends AppCompatActivity {
 
+    private String username;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invoices);
         ButterKnife.bind(this);
+
+        Bundle bundle = getIntent().getExtras();
+        username = bundle.getString("username");
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -26,7 +31,7 @@ public class InvoicesActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.fragment_container, new AllInvoicesFragment())
+                    .replace(R.id.fragment_container, AllInvoicesFragment.newInstance(username))
                     .commit();
         }
     }
@@ -37,13 +42,13 @@ public class InvoicesActivity extends AppCompatActivity {
 
                 switch (item.getItemId()) {
                     case R.id.nav_all_invoices:
-                        selectedFragment = new AllInvoicesFragment();
+                        selectedFragment = AllInvoicesFragment.newInstance(username);
                         break;
                     case R.id.nav_paid_invoices:
-                        selectedFragment = new PaidInvoicesFragment();
+                        selectedFragment = PaidInvoicesFragment.newInstance(username);
                         break;
                     case R.id.nav_unpaid_invoices:
-                        selectedFragment = new UnpaidInvoicesFragment();
+                        selectedFragment = UnpaidInvoicesFragment.newInstance(username);
                         break;
                 }
 

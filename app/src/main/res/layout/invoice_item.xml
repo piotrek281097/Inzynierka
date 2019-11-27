@@ -60,6 +60,7 @@
                         android:id="@+id/imageViewIsPaid"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_marginLeft="5dp"
                         app:srcCompat="@drawable/ic_done_black_24dp" />
                 </LinearLayout>
             </LinearLayout>
@@ -79,7 +80,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:layout_centerInParent="true"
-                    android:text="@string/changeStatus"></Button>
+                    android:text="@string/show_more"></Button>
 
             </LinearLayout>
         </LinearLayout>

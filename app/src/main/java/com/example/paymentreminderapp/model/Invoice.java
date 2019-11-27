@@ -16,6 +16,10 @@ public class Invoice {
     private String referenceToPDF;
     private String invoiceSavedTimestamp;
 
+    public Invoice() {
+
+    }
+
     public Invoice(String uuid, String username, Double money, String currency, String deadlineDate, String receiverAccountNumber, boolean isPaid, boolean isConfirmedByUser, boolean isDeleted, String receiverComapnyName, String referenceToPDF, String invoiceSavedTimestamp) {
         this.uuid = uuid;
         this.username = username;

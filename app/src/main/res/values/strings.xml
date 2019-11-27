@@ -20,5 +20,10 @@
     <string name="all">Wszystkie</string>
     <string name="paid">Zapłacone</string>
     <string name="unpaid">Do zapłaty</string>
+    <string name="ensure_change_payment_status">Czy na pewno chcesz zmienić status płatności faktury?</string>
+    <string name="confirm">Tak</string>
+    <string name="cancel">Nie</string>
+    <string name="details">Szczegóły</string>
+    <string name="show_more">pokaż więcej</string>
 
 </resources>

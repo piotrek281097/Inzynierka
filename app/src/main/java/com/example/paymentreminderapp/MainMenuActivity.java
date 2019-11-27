@@ -2,7 +2,10 @@ package com.example.paymentreminderapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +20,7 @@ import androidx.work.NetworkType;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 
+import com.example.paymentreminderapp.helpers.Utils;
 import com.example.paymentreminderapp.invoices.InvoicesActivity;
 import com.example.paymentreminderapp.model.Invoice;
 import com.example.paymentreminderapp.model.User;
@@ -57,6 +61,7 @@ public class MainMenuActivity extends AppCompatActivity {
     InvoiceRepository invoiceRepository = new InvoiceRepository();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private final String COLLECTION_NAME = "Users";
+    private String usernamePassedFurther;
 
 
     @Override
@@ -76,8 +81,14 @@ public class MainMenuActivity extends AppCompatActivity {
         });
 
         btnInvoices.setOnClickListener(v -> {
-            Intent intent = new Intent(getBaseContext(), InvoicesActivity.class);
-            startActivity(intent);
+            Intent i = new Intent(getBaseContext(), InvoicesActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("username", usernamePassedFurther);
+            i.putExtras(bundle);
+            startActivity(i);
+
+//            Intent intent = new Intent(getBaseContext(), InvoicesActivity.class);
+//            startActivity(intent);
         });
     }
 
@@ -114,6 +125,7 @@ public class MainMenuActivity extends AppCompatActivity {
             String id = acct.getId();
             String idToken = acct.getIdToken();
             String username = email1.replace("@gmail.com", "");
+            usernamePassedFurther = username;
             String password = getPasswordFromSharedPref();
 
             String passwordUser = userRepository.getPasswordUser(username);
@@ -127,6 +139,7 @@ public class MainMenuActivity extends AppCompatActivity {
             //userRepository.save(user);
             saveToFirestoreAndLaunchCheckEmailWorker(user);
             String uuid = UUID.randomUUID().toString();
+
 
             Invoice invoice1 = new Invoice(
                     UUID.randomUUID().toString(),
@@ -165,7 +178,7 @@ public class MainMenuActivity extends AppCompatActivity {
                     "ZŁ",
                     new Date().toString(),
                     "3234567890",
-                    false,
+                    true,
                     false,
                     false,
                     "Orange3",
@@ -173,12 +186,14 @@ public class MainMenuActivity extends AppCompatActivity {
                     "2214356720192411"
             );
 
-//
+
 //            invoiceRepository.save(invoice1);
 //            invoiceRepository.save(invoice2);
 //            invoiceRepository.save(invoice3);
         }
     }
+
+
 
     public void checkEmailAccount() {
         System.out.println("CHECK_EMAIL_LAUNCHED");
