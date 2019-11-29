@@ -1,8 +1,8 @@
 package com.example.paymentreminderapp.model;
 
-import java.util.UUID;
+import java.io.Serializable;
 
-public class Invoice {
+public class Invoice implements Serializable {
     private String uuid;
     private String username;
     private Double money;
@@ -12,15 +12,17 @@ public class Invoice {
     private boolean isPaid;
     private boolean isConfirmedByUser;
     private boolean isDeleted;
-    private String receiverComapnyName;
+    private String receiverCompanyName;
     private String referenceToPDF;
     private String invoiceSavedTimestamp;
+    private String addedBy;
+    private String invoiceSaveDate;
 
     public Invoice() {
 
     }
 
-    public Invoice(String uuid, String username, Double money, String currency, String deadlineDate, String receiverAccountNumber, boolean isPaid, boolean isConfirmedByUser, boolean isDeleted, String receiverComapnyName, String referenceToPDF, String invoiceSavedTimestamp) {
+    public Invoice(String uuid, String username, Double money, String currency, String deadlineDate, String receiverAccountNumber, boolean isPaid, boolean isConfirmedByUser, boolean isDeleted, String receiverCompanyName, String referenceToPDF, String invoiceSavedTimestamp, String addedBy, String invoiceSaveDate) {
         this.uuid = uuid;
         this.username = username;
         this.money = money;
@@ -30,9 +32,11 @@ public class Invoice {
         this.isPaid = isPaid;
         this.isConfirmedByUser = isConfirmedByUser;
         this.isDeleted = isDeleted;
-        this.receiverComapnyName = receiverComapnyName;
+        this.receiverCompanyName = receiverCompanyName;
         this.referenceToPDF = referenceToPDF;
         this.invoiceSavedTimestamp = invoiceSavedTimestamp;
+        this.addedBy = addedBy;
+        this.invoiceSaveDate = invoiceSaveDate;
     }
 
     public String getUuid() {
@@ -107,12 +111,12 @@ public class Invoice {
         isDeleted = deleted;
     }
 
-    public String getReceiverComapnyName() {
-        return receiverComapnyName;
+    public String getReceiverCompanyName() {
+        return receiverCompanyName;
     }
 
-    public void setReceiverComapnyName(String receiverComapnyName) {
-        this.receiverComapnyName = receiverComapnyName;
+    public void setReceiverCompanyName(String receiverCompanyName) {
+        this.receiverCompanyName = receiverCompanyName;
     }
 
     public String getReferenceToPDF() {
@@ -129,5 +133,21 @@ public class Invoice {
 
     public void setInvoiceSavedTimestamp(String invoiceSavedTimestamp) {
         this.invoiceSavedTimestamp = invoiceSavedTimestamp;
+    }
+
+    public String getAddedBy() {
+        return addedBy;
+    }
+
+    public void setAddedBy(String addedBy) {
+        this.addedBy = addedBy;
+    }
+
+    public String getInvoiceSaveDate() {
+        return invoiceSaveDate;
+    }
+
+    public void setInvoiceSaveDate(String invoiceSaveDate) {
+        this.invoiceSaveDate = invoiceSaveDate;
     }
 }

@@ -2,15 +2,11 @@ package com.example.paymentreminderapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,9 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.work.Constraints;
 import androidx.work.NetworkType;
 import androidx.work.PeriodicWorkRequest;
-import androidx.work.WorkManager;
 
-import com.example.paymentreminderapp.helpers.Utils;
 import com.example.paymentreminderapp.invoices.InvoicesActivity;
 import com.example.paymentreminderapp.model.Invoice;
 import com.example.paymentreminderapp.model.User;
@@ -38,8 +32,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -153,8 +145,10 @@ public class MainMenuActivity extends AppCompatActivity {
                     false,
                     "Orange1",
                     "link",
-                    "2214356720192411"
-                    );
+                    "2214356720192411",
+                    "automatycznie",
+                    new Date().toString()
+            );
 
             Invoice invoice2 = new Invoice(
                     UUID.randomUUID().toString(),
@@ -168,7 +162,9 @@ public class MainMenuActivity extends AppCompatActivity {
                     false,
                     "Orange2",
                     "link",
-                    "2214356720192411"
+                    "2214356720192411",
+                    "manualnie",
+                    new Date().toString()
             );
 
             Invoice invoice3 = new Invoice(
@@ -183,7 +179,9 @@ public class MainMenuActivity extends AppCompatActivity {
                     false,
                     "Orange3",
                     "link",
-                    "2214356720192411"
+                    "2214356720192411",
+                    "automatycznie",
+                    new Date().toString()
             );
 
 

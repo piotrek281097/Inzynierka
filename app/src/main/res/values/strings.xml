@@ -25,5 +25,19 @@
     <string name="cancel">Nie</string>
     <string name="details">Szczegóły</string>
     <string name="show_more">pokaż więcej</string>
+    <string name="receiverName">Odbiorca: </string>
+    <string name="accountNumber">Nr konta: </string>
+    <string name="confirmed">Potwierdzona faktura</string>
+    <string name="showPDF">Podgląd PDF</string>
+    <string name="confirm_invoice">Potwierdź dane z faktury</string>
+    <string name="addedBy">Dodane:</string>
+    <string name="edit">Edytuj</string>
+    <string name="invoice">Faktura</string>
+    <string name="invoice_details">Szczegóły faktury</string>
+    <string name="confirm_invoice_short">Potwierdź dane</string>
+    <string name="pay">Przejdź do płatności</string>
+    <string name="add_when">Data zapisania:</string>
+    <string name="pay_short">Zapłać</string>
+    <string name="added_when">Data zapisania:</string>
 
 </resources>

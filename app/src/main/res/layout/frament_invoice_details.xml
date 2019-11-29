@@ -1,11 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="8dp"
+    android:focusableInTouchMode="true"
+    style="@style/item">
 
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="DETAILS"/>
 
-</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:maxLines="1"
+                    android:text="@string/invoice_details"
+                    android:textColor="@color/black"
+                    android:textSize="30dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textViewDeadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/deadline"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textViewMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewDeadline"
+                android:layout_marginTop="5dp"
+                android:text="@string/money"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewIsPaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/paid"
+
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIsPaid"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    app:srcCompat="@drawable/ic_done_black_24dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/ButtonCabal"
+                        android:id="@+id/btnChangeStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginRight="5dp"
+                        android:text="@string/changeStatus"></Button>
+
+                    <Button
+                        style="@style/ButtonCabal"
+                        android:id="@+id/btnPay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/pay"></Button>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textCompanyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/receiverName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/textAccountReceiverNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textCompanyName"
+                android:layout_marginTop="5dp"
+                android:text="@string/accountNumber"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewIsConfirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/confirmed"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+                <ImageView
+                    android:id="@+id/imageViewIsConfirmed"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="5dp"
+                    app:srcCompat="@drawable/ic_close_black_24dp" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                <Button
+                    style="@style/ButtonCabal"
+                    android:id="@+id/btnShowInvoicePDF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/showPDF"></Button>
+
+                <Button
+                    style="@style/ButtonCabal"
+                    android:id="@+id/btnConfirmInvoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/confirm_invoice_short"></Button>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textAddByWho"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addedBy"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+            <TextView
+                android:id="@+id/textAddedWhen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/added_when"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/buttonEditInvoice"
+                    style="@style/FAB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/ic_edit_black_24dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+</ScrollView>

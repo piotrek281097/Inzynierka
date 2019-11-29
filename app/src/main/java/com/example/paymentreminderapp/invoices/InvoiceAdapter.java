@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import com.example.paymentreminderapp.model.Invoice;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.common.images.ImageManager;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -30,6 +32,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class InvoiceAdapter extends FirestoreRecyclerAdapter<Invoice, InvoiceAdapter.InvoiceHolder> {
+
+    private OnItemClickListener listener;
+
 
     public InvoiceAdapter(@NonNull FirestoreRecyclerOptions<Invoice> options) {
         super(options);
@@ -49,11 +54,16 @@ public class InvoiceAdapter extends FirestoreRecyclerAdapter<Invoice, InvoiceAda
     }
 
     class InvoiceHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.textViewDeadline) TextView textViewDeadline;
-        @BindView(R.id.textViewIsPaid) TextView textViewIsPaid;
-        @BindView(R.id.textViewMoney) TextView textViewMoney;
-        @BindView(R.id.imageViewIsPaid) ImageView imageViewIsPaid;
-        @BindView(R.id.btnChangeStatus) Button btnChangeStatus;
+        @BindView(R.id.textViewDeadline)
+        TextView textViewDeadline;
+        @BindView(R.id.textViewIsPaid)
+        TextView textViewIsPaid;
+        @BindView(R.id.textViewMoney)
+        TextView textViewMoney;
+        @BindView(R.id.imageViewIsPaid)
+        ImageView imageViewIsPaid;
+        @BindView(R.id.btnChangeStatus)
+        Button btnShowDetails;
 
         public InvoiceHolder(View itemView) {
             super(itemView);
@@ -73,8 +83,14 @@ public class InvoiceAdapter extends FirestoreRecyclerAdapter<Invoice, InvoiceAda
                     .addToBackStack(null)
                     .commit());
 */
-            btnChangeStatus.setOnClickListener(v -> {
-                System.out.println("BUTTON_CHANGE_STATUS_CLICKED");
+            btnShowDetails.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION && listener != null) {
+                        listener.onItemClick(getSnapshots().getSnapshot(position), position);
+                    }
+                }
             });
 
         }
@@ -93,6 +109,13 @@ public class InvoiceAdapter extends FirestoreRecyclerAdapter<Invoice, InvoiceAda
             }
 
         }
+    }
+    public interface OnItemClickListener {
+        void onItemClick(DocumentSnapshot documentSnapshot, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 }
 

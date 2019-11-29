@@ -3,6 +3,8 @@ package com.example.paymentreminderapp.repository;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.paymentreminderapp.model.Invoice;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -19,6 +21,7 @@ public class InvoiceRepository {
     private static final String INVOICE = "Invoice_";
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
     public void save(Invoice invoice) {
         db.collection(COLLECTION_NAME).document(INVOICE + invoice.getUuid()).set(invoice)
@@ -38,7 +41,11 @@ public class InvoiceRepository {
     }
 
     public void updatePaidStatus(boolean isPaid, String idInvoice) {
-        db.collection(COLLECTION_NAME).document(idInvoice).update("paid", isPaid);
+        db.collection(COLLECTION_NAME).document(INVOICE + idInvoice).update("paid", isPaid);
+    }
+
+    public void updateConfirmedByUserStatus(boolean isConfirmed, String idInvoice) {
+        db.collection(COLLECTION_NAME).document(INVOICE + idInvoice).update("confirmedByUser", isConfirmed);
     }
 
     public Query getAllInvoices(String username) {
@@ -57,5 +64,10 @@ public class InvoiceRepository {
         return db.collection("Invoices")
                 .whereEqualTo("username", username)
                 .whereEqualTo("paid", false);
+    }
+
+    public Query getInvoiceByUUID(String uuid) {
+        return db.collection("Invoices")
+                .whereEqualTo("uuid", uuid);
     }
 }

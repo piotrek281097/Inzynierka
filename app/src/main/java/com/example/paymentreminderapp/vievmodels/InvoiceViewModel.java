@@ -13,12 +13,12 @@ import java.util.List;
 
 public class InvoiceViewModel extends AndroidViewModel {
     private InvoiceRepository repository;
-    private LiveData<List<Invoice>> allInvoices;
+    private LiveData<Invoice> invoiceDetails;
 
     public InvoiceViewModel(@NonNull Application application) {
         super(application);
         repository = new InvoiceRepository();
-//        allInvoices = repository.getAllInvoices();
+//        invoiceDetails = repository.getInvoiceDetails();
     }
 
     public void insert(Invoice invoice) {
@@ -37,7 +37,7 @@ public class InvoiceViewModel extends AndroidViewModel {
 //        repository.deleteAllInvoices();
     }
 
-    public LiveData<List<Invoice>> getAllInvoices() {
-        return allInvoices;
+    public LiveData<Invoice> getInvoiceDetails() {
+        return invoiceDetails;
     }
 }
