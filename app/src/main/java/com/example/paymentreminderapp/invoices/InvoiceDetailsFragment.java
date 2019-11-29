@@ -26,6 +26,7 @@ import com.example.paymentreminderapp.vievmodels.InvoiceViewModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
@@ -50,7 +51,7 @@ public class InvoiceDetailsFragment extends Fragment {
     @BindView(R.id.btnShowInvoicePDF) Button btnShowInvoicePDF;
     @BindView(R.id.btnConfirmInvoice) Button btnConfirmInvoice;
     @BindView(R.id.btnPay) Button btnPay;
-    @BindView(R.id.buttonEditInvoice) Button buttonEditInvoice;
+    @BindView(R.id.buttonEditInvoice) FloatingActionButton buttonEditInvoice;
 
 
     private static final String COLLECTION_NAME = "Invoices";
@@ -120,7 +121,7 @@ public class InvoiceDetailsFragment extends Fragment {
         buttonEditInvoice.setOnClickListener(v -> Objects.requireNonNull(getActivity())
                 .getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_container, new EditInvoiceFragment())
+                .replace(R.id.fragment_container, EditInvoiceFragment.newInstance(invoice))
                 .addToBackStack(null)
                 .commit());
 

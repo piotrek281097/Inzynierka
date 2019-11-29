@@ -30,7 +30,7 @@ public class EditInvoiceFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frament_invoice_details, container, false);
+        View view = inflater.inflate(R.layout.fragment_edit_invoice, container, false);
         ButterKnife.bind(this, view);
 
         if(getArguments() != null) {
