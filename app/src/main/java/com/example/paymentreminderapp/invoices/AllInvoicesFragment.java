@@ -5,6 +5,7 @@ import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,12 +25,14 @@ import com.example.paymentreminderapp.model.Invoice;
 import com.example.paymentreminderapp.repository.InvoiceRepository;
 import com.example.paymentreminderapp.vievmodels.InvoiceViewModel;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 import butterknife.BindView;
@@ -37,8 +40,9 @@ import butterknife.ButterKnife;
 
 public class AllInvoicesFragment extends Fragment {
 
-    @BindView(R.id.recycler_view_invoices)
-    RecyclerView recyclerView;
+    @BindView(R.id.recycler_view_invoices) RecyclerView recyclerView;
+    @BindView(R.id.buttonAddInvoice) FloatingActionButton buttonAddInvoice;
+
 
     private InvoiceAdapter adapter;
     private InvoiceRepository invoiceRepository;
@@ -66,6 +70,13 @@ public class AllInvoicesFragment extends Fragment {
         invoiceRepository = new InvoiceRepository();
 
         setUpRecyclerView(view);
+
+        buttonAddInvoice.setOnClickListener(v -> Objects.requireNonNull(getActivity())
+                .getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new AddInvoiceFragment())
+                .addToBackStack(null)
+                .commit());
 
         return view;
     }

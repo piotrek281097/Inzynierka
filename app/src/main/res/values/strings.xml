@@ -39,5 +39,13 @@
     <string name="add_when">Data zapisania:</string>
     <string name="pay_short">Zapłać</string>
     <string name="added_when">Data zapisania:</string>
+    <string name="edit_title">Edycja</string>
+    <string name="choose_date">Wybierz datę</string>
+    <string name="save">Zapisz</string>
+    <string-array name="yes_no_array">
+        <item>Tak</item>
+        <item>Nie</item>
+    </string-array>
+    <string name="default_font" translatable="false">sans-serif-condensed</string>
 
 </resources>

@@ -44,6 +44,24 @@ public class InvoiceRepository {
         db.collection(COLLECTION_NAME).document(INVOICE + idInvoice).update("paid", isPaid);
     }
 
+    public void updateDeadlineDate(String deadline, String idInvoice) {
+        db.collection(COLLECTION_NAME).document(INVOICE + idInvoice).update("deadlineDate", deadline);
+    }
+
+    public void updateMoney(double money, String idInvoice) {
+        db.collection(COLLECTION_NAME).document(INVOICE + idInvoice).update("money", money);
+    }
+
+
+    public void updatereceiverAccountNumber(String receiverAccountNumber, String idInvoice) {
+        db.collection(COLLECTION_NAME).document(INVOICE + idInvoice).update("receiverAccountNumber", receiverAccountNumber);
+    }
+
+
+    public void updatereceiverCompanyName(String receiverCompanyName, String idInvoice) {
+        db.collection(COLLECTION_NAME).document(INVOICE + idInvoice).update("receiverCompanyName", receiverCompanyName);
+    }
+
     public void updateConfirmedByUserStatus(boolean isConfirmed, String idInvoice) {
         db.collection(COLLECTION_NAME).document(INVOICE + idInvoice).update("confirmedByUser", isConfirmed);
     }
